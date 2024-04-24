@@ -1,27 +1,15 @@
+{{define "home"}}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/mvp.css"> 
-    <title>golang for blockchain</title>
-</head>
-<body>
-    <header>
-        <h1>{{.PageTitle}}</h1>
-    </header>
-
-    <main>
-        {{range .Blocks}} 
-        <div>
-            <ul>
-                <li>{{.Hash}}</li>
-                <li>{{.Data}}</li>
-                <li>{{.PrevHash}}</li>
-            </ul>
-        </div>
-        {{end}}
-     </main>
-
-</body>
+    {{template "head" .PageTitle}}
+    <body>
+        {{template "header" .PageTitle}}
+        <main>
+            {{range .Blocks}} 
+                {{template "block"}}
+            {{end}}
+        </main>
+        {{template "footer" }}
+    </body>
 </html>
+{{end}}
