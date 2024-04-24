@@ -1,11 +1,12 @@
 {{define "block"}}
-<div>
+ <div>
     <ul>
-        <li>{{.Hash}}</li>
         <li>{{.Data}}</li>
+        <li>{{.Hash}}</li>
         {{if .PrevHash}}
-            <li>{{.PrevHash}}</li>
+        <li>{{.PrevHash}}</li>
         {{end}}
     </ul>
-</div>
+    </div>
+    <hr />
 {{end}}
