@@ -25,7 +25,7 @@ func initBlockchain() {
 		genesisBlock := createBlock("Genesis Block")
 		b.block = append(b.block, genesisBlock)
 	}
-}
+} 
 
 func (b *Block) calculateHash() {
 	hash := sha256.Sum256([]byte(b.Data + b.PrevHash))
