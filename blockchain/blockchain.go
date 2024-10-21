@@ -7,25 +7,18 @@ import (
 )
 
 type Block struct {
-	Data     string
-	Hash     string
-	PrevHash string
+	Data     string `json:"data"`
+	Hash     string `json:"hash"`
+	PrevHash string `json:"prevHash,omitempty"`
+	Height   int    `json:"height"`
 }
 
 type blockchain struct {
-	block []*Block
+	blocks []*Block
 }
 
 var b *blockchain
 var once sync.Once
-
-func initBlockchain() {
-	if b == nil {
-		b = &blockchain{}
-		genesisBlock := createBlock("Genesis Block")
-		b.block = append(b.block, genesisBlock)
-	}
-} 
 
 func (b *Block) calculateHash() {
 	hash := sha256.Sum256([]byte(b.Data + b.PrevHash))
@@ -33,27 +26,37 @@ func (b *Block) calculateHash() {
 }
 
 func getLastHash() string {
-	if b == nil || len(b.block) == 0 {
+	totalBlocks := len(GetBlockchain().blocks)
+	if totalBlocks == 0 {
 		return ""
 	}
-	return b.block[len(b.block)-1].Hash
+	return GetBlockchain().blocks[totalBlocks-1].Hash
 }
 
-func createBlock(Data string) *Block {
-	newBlock := Block{Data, "", getLastHash()}
+func createBlock(data string) *Block {
+	newBlock := Block{data, "", getLastHash(), len(GetBlockchain().blocks) + 1}
 	newBlock.calculateHash()
 	return &newBlock
 }
 
-func (b *blockchain) AddBlock(Data string) {
-	b.block = append(b.block, createBlock(Data))
+func (b *blockchain) AddBlock(data string) {
+	b.blocks = append(b.blocks, createBlock(data))
 }
 
 func GetBlockchain() *blockchain {
-	once.Do(initBlockchain)
+	if b == nil {
+		once.Do(func() {
+			b = &blockchain{}
+			b.AddBlock("Genesis")
+		})
+	}
 	return b
 }
 
 func (b *blockchain) AllBlocks() []*Block {
-	return b.block
+	return b.blocks
+}
+
+func (b *blockchain) GetBlock(height int) *Block {
+	return b.blocks[height-1]
 }
