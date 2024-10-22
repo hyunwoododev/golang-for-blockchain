@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/nomadcoders/nomadcoin/rest"
+	"github.com/hyunwoodo/nomadcoin/rest"
 )
 
 
