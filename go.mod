@@ -1,4 +1,4 @@
-module github.com/hyunwoodo/nomadcoin
+module github.com/hyunwoododev/golang-for-blockchain
 
 go 1.22.1
 

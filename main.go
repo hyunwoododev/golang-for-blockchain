@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/hyunwoodo/nomadcoin/rest"
+	"github.com/hyunwoododev/golang-for-blockchain/rest"
 )
 
 
