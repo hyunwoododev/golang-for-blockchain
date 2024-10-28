@@ -4,21 +4,22 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"runtime"
 
 	"github.com/hyunwoododev/golang-for-blockchain/explorer"
 	"github.com/hyunwoododev/golang-for-blockchain/rest"
 )
 
-func usage(){
-	fmt.Printf("Welcome to 노마드 코인 \n\n")
-	fmt.Printf("Please use the following flags: \n\n")
-	fmt.Printf("-port:         Set the PORT of the server \n")
-	fmt.Printf("-mode:         Choose between 'html' and 'rest' \n\n")
-	os.Exit(0)
+func usage() {
+	fmt.Printf("Welcome to 노마드 코인\n\n")
+	fmt.Printf("Please use the following flags:\n\n")
+	fmt.Printf("-port:		Set the PORT of the server\n")
+	fmt.Printf("-mode:		Choose between 'html' and 'rest'\n\n")
+	runtime.Goexit()
 }
 
-func Start(){
-	if len(os.Args) == 1{
+func Start() {
+	if len(os.Args) == 1 {
 		usage()
 	}
 
@@ -33,8 +34,6 @@ func Start(){
 	case "html":
 		explorer.Start(*port)
 	default:
-		usage()		
+		usage()
 	}
-
-	fmt.Println(*port, *mode)
 }

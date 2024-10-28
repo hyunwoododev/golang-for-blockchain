@@ -1,7 +1,13 @@
 package main
 
-import "github.com/hyunwoododev/golang-for-blockchain/blockchain"
+import (
+	"github.com/hyunwoododev/golang-for-blockchain/cli"
+	"github.com/hyunwoododev/golang-for-blockchain/db"
+)
+
+
 
 func main() {
-	blockchain.Blockchain()
+	defer db.Close()
+	cli.Start()
 }
