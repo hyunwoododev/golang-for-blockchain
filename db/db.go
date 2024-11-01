@@ -5,6 +5,7 @@ import (
 	"github.com/hyunwoododev/golang-for-blockchain/utils"
 )
 
+
 const (
 	dbName       = "blockchain.db"
 	dataBucket   = "data"
