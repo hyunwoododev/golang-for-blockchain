@@ -9,22 +9,21 @@ import (
 	"github.com/hyunwoododev/golang-for-blockchain/utils"
 )
 
-
 type Block struct {
-	Data       string `json:"data"`
-	Hash       string `json:"hash"`
-	PrevHash   string `json:"prevHash,omitempty"`
-	Height     int    `json:"height"`
-	Difficulty int    `json:"difficulty"`
-	Nonce      int    `json:"nonce"`
-	Timestamp  int    `json:"timestamp"`
+	Data       string 	`json:"data"`
+	Hash       string 	`json:"hash"`
+	PrevHash   string 	`json:"prevHash,omitempty"`
+	Height     int    	`json:"height"`
+	Difficulty int    	`json:"difficulty"`
+	Nonce      int    	`json:"nonce"`
+	Timestamp  int    	`json:"timestamp"`
 }
+
+var ErrNotFound = errors.New("block not found")
 
 func (b *Block) persist() {
 	db.SaveBlock(b.Hash, utils.ToBytes(b))
 }
-
-var ErrNotFound = errors.New("block not found")
 
 func (b *Block) restore(data []byte) {
 	utils.FromBytes(b, data)

@@ -14,6 +14,7 @@ func HandleErr(err error) {
 	}
 }
 
+
 func ToBytes(i interface{}) []byte {
 	var aBuffer bytes.Buffer
 	encoder := gob.NewEncoder(&aBuffer)
@@ -21,10 +22,12 @@ func ToBytes(i interface{}) []byte {
 	return aBuffer.Bytes()
 }
 
+
 func FromBytes(i interface{}, data []byte) {
-	encoder := gob.NewDecoder(bytes.NewReader(data))
-	HandleErr(encoder.Decode(i))
+	decoder := gob.NewDecoder(bytes.NewReader(data))
+	HandleErr(decoder.Decode(i))
 }
+
 
 func Hash(i interface{}) string {
 	s := fmt.Sprintf("%v", i)
