@@ -26,7 +26,7 @@ func FromBytes(i interface{}, data []byte) {
 	HandleErr(encoder.Decode(i))
 }
 
-func Hash(i interface{}) string {
+func  Hash(i interface{}) string {
 	s := fmt.Sprintf("%v", i)
 	hash := sha256.Sum256([]byte(s))
 	return fmt.Sprintf("%x", hash)
