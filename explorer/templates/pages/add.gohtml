@@ -5,10 +5,12 @@
   <body>
     {{template "header" "Add"}}
     <main>
-        <form method="POST">
-            <input type="text" placeholder="Data for your block" required name="blockData" />
-            <button>Add Block</button>
-        </form>
+      <aside>
+          <form method="POST">
+              <input type="text" placeholder="Data for your block" required name="blockData" />
+              <button>Add Block</button>
+          </form>
+      </aside>
     </main>
   {{template "footer"}}
   </body>
