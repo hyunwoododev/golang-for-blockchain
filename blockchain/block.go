@@ -2,6 +2,7 @@ package blockchain
 
 import (
 	"errors"
+	"fmt"
 	"strings"
 	"time"
 
@@ -10,20 +11,20 @@ import (
 )
 
 type Block struct {
-	Data       string 	`json:"data"`
-	Hash       string 	`json:"hash"`
-	PrevHash   string 	`json:"prevHash,omitempty"`
-	Height     int    	`json:"height"`
-	Difficulty int    	`json:"difficulty"`
-	Nonce      int    	`json:"nonce"`
-	Timestamp  int    	`json:"timestamp"`
+	Data       string `json:"data"`
+	Hash       string `json:"hash"`
+	PrevHash   string `json:"prevHash,omitempty"`
+	Height     int    `json:"height"`
+	Difficulty int    `json:"difficulty"`
+	Nonce      int    `json:"nonce"`
+	Timestamp  int    `json:"timestamp"`
 }
-
-var ErrNotFound = errors.New("block not found")
 
 func (b *Block) persist() {
 	db.SaveBlock(b.Hash, utils.ToBytes(b))
 }
+
+var ErrNotFound = errors.New("block not found")
 
 func (b *Block) restore(data []byte) {
 	utils.FromBytes(b, data)
@@ -44,6 +45,7 @@ func (b *Block) mine() {
 	for {
 		b.Timestamp = int(time.Now().Unix())
 		hash := utils.Hash(b)
+		fmt.Printf("\n\n\nTarget:%s\nHash:%s\nNonce:%d\n\n\n", target, hash, b.Nonce)
 		if strings.HasPrefix(hash, target) {
 			b.Hash = hash
 			break
