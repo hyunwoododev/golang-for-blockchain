@@ -2,7 +2,7 @@ package db
 
 import (
 	"github.com/boltdb/bolt"
-	"github.com/hyunwoododev/golang-for-blockchain/utils"
+	"github.com/nomadcoders/nomadcoin/utils"
 )
 
 const (

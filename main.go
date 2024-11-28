@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/hyunwoododev/golang-for-blockchain/cli"
-	"github.com/hyunwoododev/golang-for-blockchain/db"
+	"github.com/nomadcoders/nomadcoin/cli"
+	"github.com/nomadcoders/nomadcoin/db"
 )
 
 func main() {

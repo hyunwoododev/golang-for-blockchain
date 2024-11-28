@@ -4,10 +4,9 @@ import (
 	"flag"
 	"fmt"
 	"os"
-	"runtime"
 
-	"github.com/hyunwoododev/golang-for-blockchain/explorer"
-	"github.com/hyunwoododev/golang-for-blockchain/rest"
+	"github.com/nomadcoders/nomadcoin/explorer"
+	"github.com/nomadcoders/nomadcoin/rest"
 )
 
 func usage() {
@@ -15,7 +14,7 @@ func usage() {
 	fmt.Printf("Please use the following flags:\n\n")
 	fmt.Printf("-port:		Set the PORT of the server\n")
 	fmt.Printf("-mode:		Choose between 'html' and 'rest'\n\n")
-	runtime.Goexit()
+	os.Exit(0)
 }
 
 func Start() {

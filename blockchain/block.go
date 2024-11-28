@@ -2,12 +2,11 @@ package blockchain
 
 import (
 	"errors"
-	"fmt"
 	"strings"
 	"time"
 
-	"github.com/hyunwoododev/golang-for-blockchain/db"
-	"github.com/hyunwoododev/golang-for-blockchain/utils"
+	"github.com/nomadcoders/nomadcoin/db"
+	"github.com/nomadcoders/nomadcoin/utils"
 )
 
 type Block struct {
@@ -45,7 +44,6 @@ func (b *Block) mine() {
 	for {
 		b.Timestamp = int(time.Now().Unix())
 		hash := utils.Hash(b)
-		fmt.Printf("\n\n\nTarget:%s\nHash:%s\nNonce:%d\n\n\n", target, hash, b.Nonce)
 		if strings.HasPrefix(hash, target) {
 			b.Hash = hash
 			break

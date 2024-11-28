@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"text/template"
 
-	"github.com/hyunwoododev/golang-for-blockchain/blockchain"
+	"github.com/nomadcoders/nomadcoin/blockchain"
 )
 
 const (
