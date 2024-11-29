@@ -5,8 +5,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/nomadcoders/nomadcoin/db"
-	"github.com/nomadcoders/nomadcoin/utils"
+	"github.com/hyunwoo.do/go-coin/db"
+	"github.com/hyunwoo.do/go-coin/utils"
 )
 
 type Block struct {

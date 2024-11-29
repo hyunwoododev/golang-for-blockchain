@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/nomadcoders/nomadcoin/explorer"
-	"github.com/nomadcoders/nomadcoin/rest"
+	"github.com/hyunwoo.do/go-coin/explorer"
+	"github.com/hyunwoo.do/go-coin/rest"
 )
 
 func usage() {
