@@ -1,4 +1,4 @@
-module github.com/hyunwoo.do/go-coin
+module github.com/nomadcoders/nomadcoin
 
 go 1.16
 

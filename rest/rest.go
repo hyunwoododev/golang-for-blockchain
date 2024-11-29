@@ -7,9 +7,9 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/hyunwoo.do/go-coin/blockchain"
-	"github.com/hyunwoo.do/go-coin/utils"
-	"github.com/hyunwoo.do/go-coin/wallet"
+	"github.com/nomadcoders/nomadcoin/blockchain"
+	"github.com/nomadcoders/nomadcoin/utils"
+	"github.com/nomadcoders/nomadcoin/wallet"
 )
 
 var port string

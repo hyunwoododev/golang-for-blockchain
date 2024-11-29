@@ -10,11 +10,11 @@ import (
 	"math/big"
 	"os"
 
-	"github.com/hyunwoo.do/go-coin/utils"
+	"github.com/nomadcoders/nomadcoin/utils"
 )
 
 const (
-	fileName string = "go-coin.wallet"
+	fileName string = "nomadcoin.wallet"
 )
 
 type wallet struct {

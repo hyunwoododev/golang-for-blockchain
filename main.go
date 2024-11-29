@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/hyunwoo.do/go-coin/cli"
-	"github.com/hyunwoo.do/go-coin/db"
+	"github.com/nomadcoders/nomadcoin/cli"
+	"github.com/nomadcoders/nomadcoin/db"
 )
 
 func main() {

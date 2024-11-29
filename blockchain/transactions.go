@@ -4,8 +4,8 @@ import (
 	"errors"
 	"time"
 
-	"github.com/hyunwoo.do/go-coin/utils"
-	"github.com/hyunwoo.do/go-coin/wallet"
+	"github.com/nomadcoders/nomadcoin/utils"
+	"github.com/nomadcoders/nomadcoin/wallet"
 )
 
 const (

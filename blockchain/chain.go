@@ -3,8 +3,8 @@ package blockchain
 import (
 	"sync"
 
-	"github.com/hyunwoo.do/go-coin/db"
-	"github.com/hyunwoo.do/go-coin/utils"
+	"github.com/nomadcoders/nomadcoin/db"
+	"github.com/nomadcoders/nomadcoin/utils"
 )
 
 const (
