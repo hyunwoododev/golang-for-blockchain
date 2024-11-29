@@ -1,6 +1,8 @@
 package db
 
 import (
+	"fmt"
+
 	"github.com/boltdb/bolt"
 	"github.com/nomadcoders/nomadcoin/utils"
 )
@@ -41,6 +43,7 @@ func SaveBlock(hash string, data []byte) {
 		err := bucket.Put([]byte(hash), data)
 		return err
 	})
+	fmt.Println("Saved hash", hash)
 	utils.HandleErr(err)
 }
 
